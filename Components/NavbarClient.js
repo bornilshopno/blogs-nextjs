@@ -3,46 +3,53 @@
 import Link from "next/link";
 
 const NavbarClient = ({ isUserAuthenticated, loginLink, logoutLink, registerLink }) => {
-    console.log("isUserAuthenticated in NavbarClient:", isUserAuthenticated); // Debugging output
 
-    const links = (
-        <>
-            <li>
-                <Link href="/">Home</Link>
-            </li>
-            <li>
-                <Link href="/profile">Profile</Link>
-            </li>
-        </>
-    );
 
-    const linksSmaller = (
-        <>
-            <li>
-                <Link href="/">Home</Link>
-            </li>
-            <li>
-                <Link href="/profile">Profile</Link>
-            </li>
-            {isUserAuthenticated ? logoutLink : loginLink}
-        </>
-    );
+    // const links = (
+    //     <>
+    //         <li>
+    //             <Link href="/">Home</Link>
+    //         </li>
+    //         <li>
+    //             <Link href="/profile">Profile</Link>
+    //         </li>
+    //     </>
+    // );
+
+    // const linksSmaller = (
+    //     <>
+    //         <li>
+    //             <Link href="/">Home</Link>
+    //         </li>
+    //         <li>
+    //             <Link href="/profile">Profile</Link>
+    //         </li>
+    //         {isUserAuthenticated ? logoutLink : loginLink}
+    //     </>
+    // );
 
     return (
-        <div className="navbar">
-            <div className="navbar-start">
+        <div className="flex justify-between items-center">
+            <div className="flex items-center ">
                 <a className="bg-gray-400 font-bold px-5 py-2 text-xl rounded-lg">BlogViewer</a>
             </div>
-            <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1 text-xl font-bold gap-5">{links}</ul>
+            <div className=" hidden lg:flex">
+                <ul className="menu menu-horizontal px-1 text-xl font-bold gap-5">
+                    <li>
+                        <Link href="/">Home</Link>
+                    </li>
+                    <li>
+                        <Link href="/profile">Profile</Link>
+                    </li>
+                </ul>
             </div>
-            <div className="navbar-end">
-                <ul className="hidden lg:flex lg:gap-5">
+            <div className="flex items-center">
+                <ul className="hidden lg:flex lg:gap-5 items-center">
                     {!isUserAuthenticated && loginLink}
                     {isUserAuthenticated && logoutLink}
                     {!isUserAuthenticated && registerLink}
                 </ul>
-                {/* <div className="dropdown dropdown-end">
+                <div className="dropdown dropdown-end">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -63,9 +70,15 @@ const NavbarClient = ({ isUserAuthenticated, loginLink, logoutLink, registerLink
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-gray-300 rounded-box z-50 w-40 py-2 shadow"
                     >
-                        {linksSmaller}
+                        <li>
+                            <Link href="/">Home</Link>
+                        </li>
+                        <li>
+                            <Link href="/profile">Profile</Link>
+                        </li>
+                        {isUserAuthenticated ? logoutLink : loginLink}
                     </ul>
-                </div> */}
+                </div>
             </div>
         </div>
     );

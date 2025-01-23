@@ -8,9 +8,9 @@ const NavbarServer = async () => {
     const { isAuthenticated } = getKindeServerSession();
     const isUserAuthenticated = await isAuthenticated();
 
-    const loginLink = (<li><LoginLink>Sign in</LoginLink></li>);
-    const registerLink = (<li><RegisterLink>Sign up</RegisterLink></li>);
-    const logoutLink = (<li><LogoutLink>Log out</LogoutLink></li>);
+    const loginLink = (<li className="font-bold"><LoginLink>Sign in</LoginLink></li>);
+    const registerLink = (<li className="font-bold"><RegisterLink>Sign up</RegisterLink></li>);
+    const logoutLink = (<li className="font-bold"><LogoutLink>Log out</LogoutLink></li>);
 
     return (
         <NavbarClient
