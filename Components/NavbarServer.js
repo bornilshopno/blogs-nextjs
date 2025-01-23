@@ -6,8 +6,6 @@ const NavbarServer = async () => {
     const { isAuthenticated } = getKindeServerSession();
     const isUserAuthenticated = await isAuthenticated();
 
-    console.log("isUserAuthenticated:", isUserAuthenticated); // Debugging output
-
     const loginLink = (<li><LoginLink>Sign in</LoginLink></li>);
     const registerLink = (<li><RegisterLink>Sign up</RegisterLink></li>);
     const logoutLink = (<li><LogoutLink>Log out</LogoutLink></li>);
