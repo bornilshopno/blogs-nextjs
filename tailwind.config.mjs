@@ -8,8 +8,8 @@ const tailwindConfig = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        // background: "var(--background)",
+        // foreground: "var(--foreground)",
       },
     },
   },
@@ -17,7 +17,7 @@ const tailwindConfig = {
     require('daisyui'),
   ],
   daisyui: {
-    themes: ["light"],
+    themes: ["light", ],
   },
 };
 

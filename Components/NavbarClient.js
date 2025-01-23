@@ -33,7 +33,7 @@ const NavbarClient = ({ isUserAuthenticated, loginLink, logoutLink, registerLink
             <div className="flex items-center ">
                 <a className="bg-gray-400 font-bold px-5 py-2 text-xl rounded-lg">BlogViewer</a>
             </div>
-            <div className=" hidden lg:flex">
+            <div className="hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 text-xl font-bold gap-5">
                     <li>
                         <Link href="/">Home</Link>
