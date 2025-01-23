@@ -1,10 +1,13 @@
 "use client";
-
+import { useState, useEffect } from "react";
 import Link from "next/link";
 
 const NavbarClient = ({ isUserAuthenticated, loginLink, logoutLink, registerLink }) => {
 
-
+    const [authState, setAuthState] = useState(isUserAuthenticated);
+    useEffect(() => {
+        setAuthState(isUserAuthenticated); 
+      }, [isUserAuthenticated]);
     // const links = (
     //     <>
     //         <li>

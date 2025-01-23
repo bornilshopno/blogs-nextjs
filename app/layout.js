@@ -24,14 +24,16 @@ export default function RootLayout({ children }) {
   return (
     <AuthProvider>
       <html lang="en" data-theme="light">
+      
+      
         <body >
-          <nav className="bg-gray-300">
+        <main>
+        <nav className="bg-gray-300">
             <NavbarServer></NavbarServer>
           </nav>
-          <hr />
-         <div>
+        
          {children}
-         </div>
+         </main>
         </body>
       </html>
     </AuthProvider>
