@@ -10,9 +10,6 @@ const Profile = async () => {
         redirect("/api/auth/login");
     }
 
-
-
-
     return (
         <div className="p-5">
             <div className="p-5 bg-gray-300">

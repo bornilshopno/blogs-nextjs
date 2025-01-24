@@ -1,7 +1,8 @@
 // import { Geist, Geist_Mono } from "next/font/google";
-import NavbarServer from "@/Components/NavbarServer";
+// import NavbarServer from "@/Components/NavbarServer";
 import "./globals.css";
 import { AuthProvider } from "@/app/AuthProvider";
+import NavbarServer from "@/Components/NavbarServer";
 import Link from "next/link";
 
 //className={`${geistSans.variable} ${geistMono.variable} antialiased`}
@@ -25,23 +26,28 @@ export default function RootLayout({ children }) {
   return (
     <AuthProvider>
       <html lang="en" data-theme="light">
-      
-      
+
+
         <body >
-        <main>
-        <nav className="bg-gray-300">
-          <NavbarServer></NavbarServer>
-            {/* <div>
-              <Link href="/" className="bg-gray-400 font-bold px-5 py-2 text-xl rounded-lg">BlogViewer</Link>
-              <ul>
-                <li><Link href="/">Home</Link></li>
-                <li><Link href="/">Profile</Link></li>
-              </ul>
-            </div> */}
-          </nav>
-        
-         {children}
-         </main>
+          <main>
+            <nav className="bg-gray-300 py-1">
+             
+            <div className="flex justify-between items-center flex-col lg:flex-row w-10/12 mx-auto gap-2">
+            <div className="flex gap-5">
+                <Link href="/" className="bg-gray-400 font-bold px-5 py-2 text-xl rounded-lg">BlogViewer</Link>
+                <ul className="flex gap-5 items-center">
+                  <li className="text-xl font-semibold bg-gray-400 rounded-lg px-3 py-1"><Link href="/">Home</Link></li>
+                  <li className="text-xl font-semibold bg-gray-400 rounded-lg px-3 py-1"><Link href="/">Profile</Link></li>
+                </ul>
+              </div>
+              <div>
+         <NavbarServer></NavbarServer>
+              </div>
+            </div>
+            </nav>
+
+            {children}
+          </main>
         </body>
       </html>
     </AuthProvider>
