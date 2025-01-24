@@ -12,36 +12,27 @@ const NavbarClient = ({ isUserAuthenticated, loginLink, logoutLink, registerLink
   }, [isUserAuthenticated]);
 
   return (
-    <div className="flex justify-between items-center">
+    <div className="flex gap-2 justify-between items-center lg:flex-row flex-col w-10/12 mx-auto py-2 ">
       <div className="flex items-center">
-        <a className="bg-gray-400 font-bold px-5 py-2 text-xl rounded-lg">BlogViewer</a>
-      </div>
-      <div className="hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 text-xl font-bold gap-5">
-          <li><Link href="/">Home</Link></li>
-          <li><Link href="/profile">Profile</Link></li>
-        </ul>
-      </div>
-      <div className="flex items-center">
-        <ul className="hidden lg:flex lg:gap-5 items-center">
-          {!authState && loginLink}
-          {authState && logoutLink}
-          {!authState && registerLink}
-        </ul>
-        <div className="dropdown dropdown-end">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
-            </svg>
-          </div>
-          <ul tabIndex={0} className="menu menu-sm dropdown-content bg-gray-300 rounded-box z-50 w-40 py-2 shadow">
-            <li><Link href="/">Home</Link></li>
-            <li><Link href="/profile">Profile</Link></li>
-            {authState ? logoutLink : loginLink}
+        <div className="flex items-center">
+          <Link href="/" className="bg-gray-400 font-bold px-5 py-2 text-xl rounded-lg">BlogViewer</Link>
+        </div>
+        <div className="">
+          <ul className="flex items-center px-1 text-xl font-bold gap-5">
+            <li className="py-1 px-3"><Link href="/">Home</Link></li>
+            <li className="py-1 px-3"><Link href="/profile">Profile</Link></li>
           </ul>
         </div>
       </div>
+      <div className="">
+        <ul className="flex gap-5 items-center">
+          {!authState && <h2 className="btn btn-sm">{loginLink}</h2>}
+          {authState && <h2 className="btn btn-sm">{logoutLink}</h2>}
+          {!authState && <h2 className="btn btn-sm">{registerLink}</h2>}
+        </ul>
+      </div>
     </div>
+
   );
 };
 

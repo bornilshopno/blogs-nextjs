@@ -2,6 +2,7 @@
 import NavbarServer from "@/Components/NavbarServer";
 import "./globals.css";
 import { AuthProvider } from "@/app/AuthProvider";
+import Link from "next/link";
 
 //className={`${geistSans.variable} ${geistMono.variable} antialiased`}
 
@@ -29,7 +30,14 @@ export default function RootLayout({ children }) {
         <body >
         <main>
         <nav className="bg-gray-300">
-            <NavbarServer></NavbarServer>
+          <NavbarServer></NavbarServer>
+            {/* <div>
+              <Link href="/" className="bg-gray-400 font-bold px-5 py-2 text-xl rounded-lg">BlogViewer</Link>
+              <ul>
+                <li><Link href="/">Home</Link></li>
+                <li><Link href="/">Profile</Link></li>
+              </ul>
+            </div> */}
           </nav>
         
          {children}
